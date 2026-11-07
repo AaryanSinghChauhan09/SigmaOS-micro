@@ -1,31 +1,7 @@
-// SPDX-License-Identifier: Apache-2.0
-//! SigmaOS-micro - System utility component
-//! Part of SigmaOS multi-repository architecture
+//! SigmaOS-micro — utility model.
 
-#![no_std]
+pub mod util;
+pub mod options;
 
-/// Component
-pub struct Component {
-    name: &'static str,
-}
-
-impl Component {
-    pub fn new() -> Self {
-        Self { name: "SigmaOS-micro" }
-    }
-}
-
-impl Default for Component {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_creation() {
-        let c = super::Component::new();
-        assert_eq!(c.name, "SigmaOS-micro");
-    }
-}
+pub use util::Model;
+pub use options::{Mode, Options};
